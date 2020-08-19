@@ -16,11 +16,10 @@
 #   limitations under the License.
 #
 # ------------------------------------------------------------------------------
-
-
 """This module contains the tests of the agent module."""
 import asyncio
 from threading import Thread
+from unittest.mock import Mock
 
 import pytest
 
@@ -60,6 +59,10 @@ class DummyAgent(Agent):
     def teardown(self) -> None:
         """Tear down the agent."""
         pass
+
+    @property
+    def resources(self):
+        return Mock()
 
 
 def test_run_agent():

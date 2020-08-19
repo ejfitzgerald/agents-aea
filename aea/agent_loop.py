@@ -217,8 +217,8 @@ class AsyncAgentLoop(BaseAgentLoop):
             task_callable,
             (period, start_at),
         ) in (
-            self._agent._get_behaviours_tasks().items()
-        ):  # pylint: disable=protected-access
+            self._agent._get_behaviours_tasks().items()  # pylint: disable=protected-access
+        ):
             self._register_periodic_task(task_callable, period, start_at)
 
     def _unregister_periodic_task(self, task_callable: Callable) -> None:
